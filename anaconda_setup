@@ -1,0 +1,31 @@
+#Anacond_setup in Linux
+
+step1: download the Anaconda
+      using anaconda url
+      command: wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
+      before running above command check have logged in with proper username and password
+      if run this command from hode directory anaconda file will be downloaded into home directory
+      before downloading suggest that go to appropriate folder and execute this command.
+      -once you downloaded then you should able to see filename which is downloaded, you use ls or dir command to see newly downloaded file
+      if you're in current directory.
+      -copy or remember which file you downloaded we will use this file name to install anaconda in coming steps.
+      
+step2:Installing
+      command: bash <filename which just we downloaded>
+      click enter after entering
+      -follow the instruction which will come after running above command and give mostly yes.
+      
+step3: check status python is installed with anacond properly
+      command: which python
+      if you're able to see python from anaconda folder then you're in correct place.. mostly it will not show anacond folder
+      because we installed anacond just now.. please closed this terminal and open new terminal and again run this command
+      -this time you should able to see the python from anaconda.
+      
+step4: hello world!
+      command: python
+      congrats you installed python using anaconda
+      let's print our favourite line Hello World!
+      write your python code print('hello world!')
+      
+Anacond dribution will install most popular DSc libraries let start Dsc Game!..
+      
