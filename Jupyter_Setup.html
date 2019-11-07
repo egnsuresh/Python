@@ -9,6 +9,8 @@ step1: login to linux using ssh connection or which is easy to you open terminal
            commands: mkdire certs
                      cd certs
                      sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout certkey.pem -out certkey.pem
+            after running above command it will asks inputs from you, enter appropriate info and finish.
+
       1.3: Jupyter configuration with self signed certificate
             command: cd ~/.jupyter/
                     vi jupyter_notebook_config.py
