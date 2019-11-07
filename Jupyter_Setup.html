@@ -1,0 +1,36 @@
+#Jupyter Global Access Setup 
+if: you have installed anaconda distribution follow below steps
+else: then follow this link to install anaconda https://github.com/egnsuresh/Python/blob/master/anaconda_setup
+
+step1: login to linux using ssh connection or which is easy to you open terminal
+      1.1: before Jupyter setup we should enable ssl for it by creating self signed certificate
+          to create self signed certificate in linux follow below instructions
+      1.2: creating .pem file for self signed certificate
+           commands: mkdire certs
+                     cd certs
+                     sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout certkey.pem -out certkey.pem
+      1.3: Jupyter configuration with self signed certificate
+            command: cd ~/.jupyter/
+                    vi jupyter_notebook_config.py
+                    (now editor will open)
+                    enter click on insert key from keyboard: it will change the mode to insert then we can add text, which is given below
+                    c = get_config()
+                    c.NotebookApp.certfile= u'/home/<username>/certs/certkey.pem'
+                    c.NotebookApp.ip='*'
+                    c.NotebookApp.open_browser=False
+                    c.NotebookApp.port=9898
+                    now save the file by enterning following commands
+                    click on escape key from keyboard and enter colon symbol from key board and enter wq to quit the writing 
+                    
+                   explination: c=get_config(): to get the configuration into variable called c
+                                c.NotebookApp.certfile=u'here wee need provide where path to .pem file which is generated on step1.2
+                                c.NotebookApp.ip='*': this is to host our jupyter notebook to all the alias name of our machine
+                                c.open_browser=False: not to open browser by default, her F in False always caps
+                                c.port=9898: give your own post number to run this notebook give unique one which is not used by 
+                                                any other app this machine
+
+step2: now run the jupyter notebook by entering below command
+      command: jupter notebook
+              if no error then it will shows url of  notebook to access it.
+              take that url and access from using any machine.
+                        
